@@ -32,6 +32,7 @@ export default async function handleRequest(
     ],
     imgSrc: [
       "'self'",
+      'https://s3-alpha-sig.figma.com',
       'http://localhost:3100',
       'https://cdn.shopify.com',
       'data:',
@@ -43,6 +44,7 @@ export default async function handleRequest(
     ],
     mediaSrc: [
       "'self'",
+      'https://s3-figma-videos-production-sig.figma.com',
       'https://cdn.shopify.com',
       'https://d3hw6dc1ow8pp2.cloudfront.net',
       'https://d3g5hqndtiniji.cloudfront.net',

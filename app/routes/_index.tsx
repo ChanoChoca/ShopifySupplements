@@ -148,7 +148,7 @@ function HeroSection({}: {}) {
   return (
     <section className="p-0">
       <video
-        src="/videos/home.mp4"
+        src="https://s3-figma-videos-production-sig.figma.com/video/1120774264148255568/TEAM/ee58/89dd/-f1d3-45a4-a2a8-c462f7e5812d?Expires=1733702400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=OHF-2GFMU4ultN8LBQDutGcV2EelyZCoV-hJnz9ctCdbR2-7B5Vtkhxcnkxo04Lbc~CWo0uFw0Lpl3Q5xP8fEulwNXGqZ4r5XonW09gN~QdRf7Mz~4Beis7FcjjOqwr1-mjL3g-JiwH5HcNuDhUP5gsT16nMybX~UStqUhvZ6B4ThNkrS8PGMRfg30o4X1Bk~6Byx0GAmksJchq8zt0nA-8AmTyOgeIiImgFCRmAM5Equw0uuG02PyeZ2xgr3gydzfD7yj2qO3U5y1lFT5BG~~50sAon1sxixjQeNcjtl1C5Ifyl-hBp502P7L-~KSSSXiUHUsE6tgce0NDoGEVT2Q__"
         autoPlay={true}
         className="hero-image"
       ></video>
@@ -156,7 +156,9 @@ function HeroSection({}: {}) {
         <h2 className="hero-title">
           Great things never came from comfort zones
         </h2>
-        <a href="/collections"><button className="hero-button">Shop Now</button></a>
+        <a href="/collections">
+          <button className="hero-button">Shop Now</button>
+        </a>
       </div>
       <div className="hero-carousel">
         <Slider {...carouselSettings}>
@@ -221,12 +223,12 @@ function AdvantagesSection({}: {}) {
         <h2>Start with your Goals</h2>
         <p>We cannot become what we want to be by remaining what we are.</p>
       </div>
-      <div className="flex flex-col gap-y-5 md:flex-row md:gap-x-5">
+      <div className="flex flex-col gap-y-5 md:flex-row md:gap-x-5 justify-center">
         <div>
           <img
-            src="/images/advantages/img.png"
+            src="https://s3-alpha-sig.figma.com/img/d75b/273b/997c2aa242084a92c3cfd8674927555e?Expires=1733702400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=DE4mUbL32RP2KcvpCz5XHDRxy8VjylcRQHuy8cxfJecDLvtUBwJoRBRzNQl~uq3A5gltxhfW3RfW~IoToOp5mxvIFGJthPnMAl9M6RK2Rh6mJyLDQ9DMQ5e9q7Ccw~yz-rU7f91LTsdjEDdBKm~OB3Otk2T3IhAYNbPwi~-FfFHEHWhz1zFFBJ1jy7e4Tr1jqs8XKroYw8M5XFrAUPRdHq-8tM2Y9wQOjQRcEK7EYfF~0LX-DtKWbWOGVXewtvMxkU9IaPHXCieqGAMg-YIehlaFxxLAKbVY~c-tY1nbv3-JVElEAJiYz-3IqNg6MG-nl6vHGcnzoUKAiU9ayD0V7Q__"
             alt="Sleep Photo"
-            className="mb-6 rounded-lg"
+            className="mb-6 rounded-lg w-full h-48 object-cover"
           />
           <div className="flex justify-between">
             <span>Sleep</span>
@@ -234,7 +236,7 @@ function AdvantagesSection({}: {}) {
               <img
                 src="/images/advantages/img_5.png"
                 alt="Sleep Photo"
-                className="advantages-icon"
+                className="advantages-icon w-6 h-6"
               />
             </a>
           </div>
@@ -242,9 +244,9 @@ function AdvantagesSection({}: {}) {
         </div>
         <div>
           <img
-            src="/images/advantages/img_1.png"
+            src="https://s3-alpha-sig.figma.com/img/89a4/0eb1/1adce8ff03d61d72ebd773237c7c9dd6?Expires=1733702400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=RWi2vf97pMtmeCSwhascc-Klz1RdvF~ptwyj9d2QdSe4cj4rNuOEpGPYCxThaakPv1b-~w7DcbVXsec3yRVr9BY1Eol3VKUHZbB2uKnAijU7VNJeAV7ZQ5DmqH7w7m4P4JITvLQS2cx4aIRpbC3i-JaRSrlsvN-R2eep7Y1l4dLF1TOgL~Q3G4~lFaoQ7DblSPqL4lhkYJYaH6ygn-wkmhw8lzfHqTjD5VahqNwsd1lq3rSTRPuNe~N7nQt6GomWKd3u09hDBBzAghvQoUWFYbl0FylLDVUp1QBA-aX43abI-v10K7aCg2quUCYwyIpRguKqumznyhia~ZegMyJUJw__"
             alt="Sleep Photo"
-            className="mb-6 rounded-lg"
+            className="mb-6 rounded-lg w-full h-48 object-cover"
           />
           <div className="flex justify-between">
             <span>Cognitive Function</span>
@@ -252,7 +254,7 @@ function AdvantagesSection({}: {}) {
               <img
                 src="/images/advantages/img_5.png"
                 alt="Sleep Photo"
-                className="advantages-icon"
+                className="advantages-icon w-6 h-6"
               />
             </a>
           </div>
@@ -260,9 +262,9 @@ function AdvantagesSection({}: {}) {
         </div>
         <div>
           <img
-            src="/images/advantages/img_2.png"
+            src="https://s3-alpha-sig.figma.com/img/7589/b818/7e6d5afa14d53ff0b6d598e9793856ab?Expires=1733702400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=EuQruEwpfgfVSECCd5ZiadAba4V5TeilYNUuX6VyJzd-CtjV5kypQNB3yCAWRTg2Q1JcJ0rBRJpzkz0KhnXpc~H8La~otK6~Ogy7lNulwLrh~8Zr-EKjDOJslQybB3tT-jCQFIYEbHFxxfOIM0vK7gaaQmhZSp~lLLMU4R8Z9SuU-rXGfsF9p3QVOdown6UP9pkzxwc4b3ug1U6bBSOz5EQtdqkab4iMrKpeEofHx6ZifxCLZ-I1MCtSX2EA40FRgVG1Ywy18JgN4DHLdwgfI7ojHrDQfqyEPLTXZ9lslyTheap5vGDDGdqWI38iKzx2pYEnM0DHYHz6f5N6JZvokQ__"
             alt="Sleep Photo"
-            className="mb-6 rounded-lg"
+            className="mb-6 rounded-lg w-full h-48 object-cover"
           />
           <div className="flex justify-between">
             <span>Foundational Health</span>
@@ -270,7 +272,7 @@ function AdvantagesSection({}: {}) {
               <img
                 src="/images/advantages/img_5.png"
                 alt="Sleep Photo"
-                className="advantages-icon"
+                className="advantages-icon w-6 h-6"
               />
             </a>
           </div>
@@ -278,9 +280,9 @@ function AdvantagesSection({}: {}) {
         </div>
         <div>
           <img
-            src="/images/advantages/img_3.png"
+            src="https://s3-alpha-sig.figma.com/img/74ee/d5b4/643a37948ecd36462f2e21db2ee9ea09?Expires=1733702400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=AyRw2jym~Wa~QK6G~5TTlCSPkWZnAf30atz~8scNHZ4gjTe9ZfC2UZRHfFxRDoaBOSSW6UbrW21rFqOvLjI5rKMBp7txclYFLEM~NBPRVSV70Pn5PrMPUzNZCKAv7uaUfE8KdDnkKaaDpsefOS5m~RZrtLtdqRWW~j~R6cL69K95857Alx0AA6L4MITby8fUp7CplmbH1KBttBylr~rVibwt2BMoYTKxKdLXeJvKzVGeV8GsbMSCs09CnNhhCsKBErVhCv4fsCRu73SWbeTYxKU3qhoU1-SgGvPWYuWpXU1vfEKg2rPWD7Vwu3DNeR4n-NA~js2-OFcJkyXAPNupWA__"
             alt="Sleep Photo"
-            className="mb-6 rounded-lg"
+            className="mb-6 rounded-lg w-full h-48 object-cover"
           />
           <div className="flex justify-between">
             <span>Athletic Performance</span>
@@ -288,7 +290,7 @@ function AdvantagesSection({}: {}) {
               <img
                 src="/images/advantages/img_5.png"
                 alt="Sleep Photo"
-                className="advantages-icon"
+                className="advantages-icon w-6 h-6"
               />
             </a>
           </div>
@@ -296,21 +298,21 @@ function AdvantagesSection({}: {}) {
         </div>
         <div>
           <img
-            src="/images/advantages/img_4.png"
+            src="https://s3-alpha-sig.figma.com/img/1ee8/c305/7977a300e076716720c993cfe604a189?Expires=1733702400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=J-xDMily-r0TLdEcO18sorPBVVYuKtSavcV4ZXp1UVhR3O3EO4tZpexVQpqCHQ8XdaAxoB5d5vQTASStQih4VtfIyl3ghYucnx4YJtlaDFXAj1tdPgD-heqFlOu-eazg1kOz7WW2R6oSOLJNaGR2eXH~nnoK8BSpRbY7Nb7OMFPqsK5SeT4DrDZMYDUiy2OMewNeRiPQ6LaFCZjbkQvNImCIixMpWE6RRi3OKF-Zilb~QyC6xiFk3l9~4ip6LDCDttbRWAK4BCWG2HbY~ED2Ts1m3EzqTkV699HYPselWBxzpt6dizg~z0LwjCBw5DoR5irUJteVawXVBFVQvC9wHg__"
             alt="Sleep Photo"
-            className="mb-6 rounded-lg"
+            className="mb-6 rounded-lg w-full h-48 object-cover"
           />
           <div className="flex justify-between">
-            <span>Hormone Support</span>
+            <span>Diet & Nutrition</span>
             <a href="/blogs/podcasts">
               <img
                 src="/images/advantages/img_5.png"
                 alt="Sleep Photo"
-                className="advantages-icon"
+                className="advantages-icon w-6 h-6"
               />
             </a>
           </div>
-          <p>Boost your mood, libido, and vitality</p>
+          <p>Get a better diet plan and healthy meals.</p>
         </div>
       </div>
     </section>
@@ -326,7 +328,7 @@ function InformationSection({}: {}) {
         <div>
           <span className="background-black inline-block w-12 h-12 content-center text-center rounded-full">
             <img
-              src="/images/why/img.png"
+              src="/images/why-health-fitness/img.png"
               alt="We Make It Easy Icon"
               className="w-6"
             />
@@ -340,7 +342,7 @@ function InformationSection({}: {}) {
         <div>
           <span className="background-black inline-block w-12 h-12 content-center text-center rounded-full">
             <img
-              src="/images/why/img_1.png"
+              src="/images/why-health-fitness/img_1.png"
               alt="Clean & Effective Icon"
               className="w-6"
             />
@@ -354,7 +356,7 @@ function InformationSection({}: {}) {
         <div>
           <span className="background-black inline-block w-12 h-12 content-center text-center rounded-full">
             <img
-              src="/images/why/img_2.png"
+              src="/images/why-health-fitness/img_2.png"
               alt="Your Free Dietitian Icon"
               className="w-6"
             />
@@ -368,7 +370,7 @@ function InformationSection({}: {}) {
         <div>
           <span className="background-black inline-block w-12 h-12 content-center text-center rounded-full">
             <img
-              src="/images/why/img_3.png"
+              src="/images/why-health-fitness/img_3.png"
               alt="Made For You Icon"
               className="w-6"
             />
@@ -430,7 +432,10 @@ function CustomizedProduct({}: {}) {
 
         <div className="flex flex-col background4 rounded-lg md:flex-row">
           <div className="content-evenly">
-            <img src="/images/products/img.png" alt="" />
+            <img
+              src="https://s3-alpha-sig.figma.com/img/e5a1/02e9/df072f0e343b93032e98806a0ee9f5b4?Expires=1733702400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=H19bBrXVmZtq~Dgrcl86m4w-qlVTaPwz1q30UhaqBXzqBpwJB5Z-yZv2gp49ZPB5s0kIvNAyFSJbRqZ4rkMFq7QO8LekoosuBu5SrpNBH6Sy~B-5icR0XwXHJM-T~GaobivupOkkppwgAVIqFoQJcVpLsQ8r342LVJNctN-w-8GCWonqqOG0CVROIAc~b6a-AFujlgxlDGoVcOkkU2geBehYVQ82bH0LDowPjqlbKXsh42Cn6d4Ug8TLJE58aRgaDZnuILh2tEH~rN-4nDAcM9CWMYYXoFDucIS-bsnfun0OVUw5fnHVs4FwoK36wZ8ilC4T-OG5h6aL80IYUobp~w__"
+              alt=""
+            />
           </div>
           <hr />
           <div className="vr m-0"></div>
@@ -441,7 +446,7 @@ function CustomizedProduct({}: {}) {
                 <div className="flex flex-col items-center gap-y-3 md:flex-row md:gap-x-3">
                   <span>
                     <img
-                      src="/images/why/img_1.png"
+                      src="/images/why-health-fitness/img_1.png"
                       alt="Clean &amp; Effective Icon"
                     />
                   </span>
@@ -450,7 +455,7 @@ function CustomizedProduct({}: {}) {
                 <div className="flex flex-col items-center gap-y-3 md:flex-row md:gap-x-3">
                   <span>
                     <img
-                      src="/images/why/img_1.png"
+                      src="/images/why-health-fitness/img_1.png"
                       alt="Clean &amp; Effective Icon"
                     />
                   </span>
@@ -459,7 +464,7 @@ function CustomizedProduct({}: {}) {
                 <div className="flex flex-col items-center gap-y-3 md:flex-row md:gap-x-3">
                   <span>
                     <img
-                      src="/images/why/img_1.png"
+                      src="/images/why-health-fitness/img_1.png"
                       alt="Clean &amp; Effective Icon"
                     />
                   </span>
@@ -538,7 +543,7 @@ function InnovateEngineering({}: {}) {
       <div className="md:text-left" id="generation">
         <h2 className="transform2">The Next Generation is Here</h2>
         <img
-          src="/images/generation/img.png"
+          src="https://s3-alpha-sig.figma.com/img/9f58/16f4/e4c9683702294b62e03a4063cd120030?Expires=1733702400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Mpb49rQ8BRYWQJHKv3i51GbMzsnYXRuUi6~gynilVtG~C4CzXUyM-59y9Jz6qCjLyij6n6tqmrrz0MZzRTjKT3VCRydvftnmBrJ~SFmv2CMY738crcpYItIGVxvwW2EZZtKzJpw2Qt71yisLFDDhCAz1~o91E784B~F6Rt2I7CUajSitwHVwbG52o-9oG1kDbl8VlPzdBxc-uYwRdq9Ld-x1rDIj~Y8IxtnsO60olM0REgROi3-bOokunYMm374Y52Q02NVJEVzYCrakzJZmLHb7RPzvcypX9CX51FOnRBcfHRE0vmqf56PblS6BOb0MabUmUo1l3ruyfuT2FhWkgg__"
           alt=""
           className="rounded-lg mb-5 md:mb-0 "
         />
@@ -577,70 +582,70 @@ function ImagesCollection({}: {}) {
         </div>
         <div>
           <img
-            src="/images/other-images/1.jpg"
+            src="https://s3-alpha-sig.figma.com/img/134d/3f4c/1eedbeee8e2ac3ae1779c55abddedda1?Expires=1733702400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=PpTeKIWGAvo9MdUzcGoTsl9v8fte6mOeLosD6ZTWZhajuE5rdDXinyjIdVA8kX85QqrtMIrnrNN28HSKflNrACZjBPv8kXN-PwHPy2vmL6IZpVnhZlm6B3OlAxVukge7EaFLEXUCARJXYSSrzMUi1kNaafNJ3rCAMhf7ShUpcTaQGb9gt0H2woHYCb~bvj074JsLb2RXecXZAMNQTJ2rymkUskdozZbixGdt2kHL0~HzIDFlxMQguDM-lLB~40pogN9qD1vwsQJvHpIUDqdRPTSPpLHaGgCY93s7MvTwBD7K9TNRak4wj79l~JBqCSlrdcJpa2Rxc-xrH0-Gs4oL8Q__"
             className="rounded-lg aspect-square"
             alt=""
           />
         </div>
         <div>
           <img
-            src="/images/other-images/2.jpg"
+            src="https://s3-alpha-sig.figma.com/img/644e/6a0c/8685771e8012fc7315b4da64384c03b2?Expires=1733702400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Diu91x241utLjY73SOUlkSKGkMDg1uufajnz~WYZA9D96-zddXHgiPk~2V9IvL80vbFS2S2lP8vOo4Tk4uOpajCb~EhjQjG2Hf8JdPTTnyMlMeMTOO2RMGkKZpT2ksZ9GfHPRlWEIaw~baf-z-YJNUcRLjpHhaC7m3v5EnjS19FS8Wa9AnphJjGKC518hvrDtJeJDJcLvuN2FKPtexrMjCXA6rOlPpXbhnYCg49x6vRn9oTaPMvTtuiID4CYQQ-d-2ICrItiqc5CG6yX4cwkM81WoWyYKRjM6qiV7Z638G1scDvvU~XHDpdUMzroFGPzubZ0pQlNfe2jtq75oLydnA__"
             className="rounded-lg aspect-square"
             alt=""
           />
         </div>
         <div>
           <img
-            src="/images/other-images/3.jpg"
+            src="https://s3-alpha-sig.figma.com/img/0701/0e1a/eda489af3bb195329ed761744130f2c5?Expires=1733702400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=HCKz~J3vlwKznpYz1I0h4-oV5CUKbZ9vZTTEjYI1WoklyN1aKzpOAa7bwjyKVHcSIgGJ4lCR3EBkSJ7zaTaXhEDtorYnOq3I4ZzLNAgI6x9HdnPpn2cYNSHy5QHU0xjfuLyPSOC5PxU1f5f192PGVOpGPvfjIR5cp-poS~Lk1TV1bCYmFS5wdu0ADmoMNsJfgn6AGlgptM4lyIosXECKcAO81M7VqLG3gqJhiXIzBEe2Q89pm700mDt0T3oSR8qb5YXpMRYrDNU-2HDp46ztN81BrGsslXj4hLCTBbgbVPhShwk3BHj8FrewqbIpSDKDnvpGmM7-zdgli0n1hLa8WA__"
             className="rounded-lg aspect-square"
             alt=""
           />
         </div>
         <div>
           <img
-            src="/images/other-images/4.jpg"
+            src="https://s3-alpha-sig.figma.com/img/102b/3c01/73629a9dc2bc50aff25b6f4866ea3f74?Expires=1733702400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=d4qjFSdsLHJTcbqJskWDgVBA~RRUi-9xOkXJwe~66aaSQM~svxzXf~qQ8d-iPX4B~fCtVgUgIXFZ9LWgusUiZlhgF0reU4zzh9IWbc0BG-qet3BJW-0ZA0-3DUtgsSN2Dg5XhCIJLT0G6hDts7k1QX-ALyzm3aMHkWsye23VRC2f4XOTqvFYIPkCBeCvi-4qGKRLFIL2YnhnVjOlx2iAE1WQDucLgdJ-WPK9KOTx-TdOcjJJaIBN7E7cHc6~qZZFxFuXijhtl3ppU8cvY27ojXdDZGRXbihCS62j3y5eQvT7A-HZ9lhUm2839fd3gJvFJWhsawGa3OShzXxWPz9U5g__"
             className="rounded-lg aspect-square"
             alt=""
           />
         </div>
         <div>
           <img
-            src="/images/other-images/5.jpg"
+            src="https://s3-alpha-sig.figma.com/img/db09/feba/3cb844d67636c6a0e73fcd9f7eddd115?Expires=1733702400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=L3qLCCsYFGliTh1BfTgZn-~zyqwfG8clRKp6yh3PPyxkpLJRIP6XYS8JjYw0Z-GSwupYGoK42NZVDmocED5mq9WrvjLNajZfvOqqS1ZKx41S9-n8RkHUlfl4~uTf0jr8XXPI6VN51FmX3Og~mvwbhdZ2suOU0Tfzx7ZV34N4qd-5cyxXnPPYVJEia0~eY~NkHzicTSmUROYzi2HN7AYvDqg874Rdjp~pVOimtVtlVRcqTI~V2ENy8we6DsGDvLZl4LegfPNKaHy7~FEeG76HIHYgLDktsFh9FYBiDWx~kCEV49wnRai-QRrkq61Y3y~x9203iJ3T1q9naUotGoLUzw__"
             className="rounded-lg aspect-square"
             alt=""
           />
         </div>
         <div>
           <img
-            src="/images/other-images/6.jpg"
+            src="https://s3-alpha-sig.figma.com/img/4a7e/e6ca/d1710e3e2619cd92705069a29344b165?Expires=1733702400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=BqkNiWyCulsOaxOv7M9pm9MN-~pfPcr5wfrWWoSxVrRGn2qrOZp4D1Rvmtilt47p0RAoI-StQI~k~II5zbYEKiTtrE4uzpGdbvTpv4s0Yx~cBSM7U6osoZsT9SoTJKCLKZw-20xtt3OhMa652zkrbrUShBdCYUq6Cy54UmS6rhajq8o4Cpokx1T6dF1uy3C~GSBZZih~LIuAgKw5wTjFumfxnIjGXAag~F04NIaPU9jMmWM9QAmGJ6uQk~FpRiw2~ybFRlXyozz6-KJqyo1ttn8CPl8RRr~kmLT8groUT6x8215Gy-FzA4j5WW9BnEUzmP53fmG4B9qoXaICx2oNFQ__"
             className="rounded-lg aspect-square"
             alt=""
           />
         </div>
         <div>
           <img
-            src="/images/other-images/7.jpg"
+            src="https://s3-alpha-sig.figma.com/img/1edd/015d/dc5e791d0bb0db166122db283583bb7d?Expires=1733702400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=koFV5Mtqaw5rNQDUU-rmZGfoxn31BGYffYhD5nMiEEDp~NL9BqAi6KxxKbofdqa2fDnywRxKIrLow9TS8Xuy1znT~ddljtBkWlQ-swyZqie5h~6Xrf8d9xmwQT5sKxovMq-Y7u1KsbdNpJH--6~QsypdrEESMh5IdZMIMGWF9ca3aXMzlxPt7RnspPn5Iu6iAIo6M68Jkk6fDrwLj7SHr38ylO4B3-JWMm4IL1AABamnad5yVVpA236De2~~bY6Nagd3Xenf2hSmKANoSfPxWypYEuapJaglSALNuG-MC~FQaivxfCQIMCf5iN90yl0TTWYt8E2RdjxUhx~zK7nB8w__"
             className="rounded-lg aspect-square"
             alt=""
           />
         </div>
         <div>
           <img
-            src="/images/other-images/8.jpg"
+            src="https://s3-alpha-sig.figma.com/img/c3c5/58af/a6ad1f78192d8dbbe42072501f0fb2bd?Expires=1733702400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=hdrSUfiGYh4vJUh4nfhV9ptFu2zF7pUGI3f5giODi1FD07vnd~Ac7CgeHjr0IVcVjXURjwBH~6J7F13ptSmTXK0qT66lt7ZrG-7aRvWs5ixlh62v3DYjs4MU~lcFM31p-2ZagExQDSd-xUlM5nbWaBLeH3w9sX0jpFCDyOLEVwJMQsDwdR9Bw4RU1CVrZg8AUJApbS4izIYEzPLHFwXk570~el8N-EykZ8Z7om~WuOWExUHP1Tbauku14u32yBlOdDFVeNEr3eo54JhOMFbgVpkCqxiRJH0gbuqJBo8DwupEdX9X-zF5dSN-Njs79bbK5VbtqwccCvyuDLmwKMS-XQ__"
             className="rounded-lg aspect-square"
             alt=""
           />
         </div>
         <div>
           <img
-            src="/images/other-images/9.jpg"
+            src="https://s3-alpha-sig.figma.com/img/125b/c343/06ce7cb040ca34b34e18b85f563739cd?Expires=1733702400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=fUoHTProOp35C3WWrwxmaztvOazCHbviGO5looa62de-WTMiHgVjMmKdpVou9qE5kYre7FSx0vXpW8Bit~4tP9rKWgTy3FGnQeQeL~gN4uuFuXBgLSqdwsabVts9QVGEwFPvHpxD18oW9G6W6uS63quLP2VAC3YpmOjERunXpKl380~q6CoTKnJ7dDDcb63Bw6O4VFCv~Koz~cD~uu3wqIZLt-qMXLGjfaOHD7kcSaRkbhXDhrsEa2QMJPBXsnONea2FfqX4MKbs4mccPfMN3juV3Cy9hB00p71p2~vZWrP7nukehe4vBOj5qQQNccWo6u8FIc7i6bSfdVw5uiqTIw__"
             className="rounded-lg aspect-square"
             alt=""
           />
         </div>
         <div>
           <img
-            src="/images/other-images/10.jpg"
+            src="https://s3-alpha-sig.figma.com/img/577a/6878/f2f45c899583bd02757bcf4cf63bb0a0?Expires=1733702400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=H6dyCjkXzBR3wU9OeRzysZcU1KvnPRhn-AuZDm1LxCg3FbO8KxK-IZzaLoWS0f382rWs-V61-zdGzl0Re3yVBeT0o1f-Ao9YGsSXo9mDUnto3DVpoKdN1uG5LMatJe2vS9YgK8R4eBp9jf4Mqa9nqdoXW2N-33JW372btwKhHlkyzoXyWQhuUYnDRD3SOaKBO0RPbikGdiSe7uw~-MOeQ0mUH3vw0WlzHEFU970q~gyoYFcuPSVCIsN~ukUKVYglWe~~QE6ykcfRDOLMnpiZmHNqTIGdPReR3~6BtCdcHzJD9rGzzuFlI4Z1NZ4PvK2V9OrNfWBEjWxOnamLZv9AoA__"
             className="rounded-lg aspect-square"
             alt=""
           />

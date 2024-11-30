@@ -905,8 +905,8 @@ function GetProduct({
 function BlogsPage({blogs}) {
   return (
     <section className="mx-10 mb-16 py-0">
-      <h6>✍️ Blogs</h6>
-      <h2>Latest Articles</h2>
+      <h6 className="text-center">✍️ Blogs</h6>
+      <h2 className="text-center">Latest Articles</h2>
       <div className="mt-12 personalized-grid overflow-x-hidden">
         {blogs.map(({node: blog}) => (
           <div key={blog.id} className="blog-container">

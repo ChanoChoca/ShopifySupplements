@@ -156,7 +156,7 @@ function HeroSection({}: {}) {
         <h2 className="hero-title">
           Great things never came from comfort zones
         </h2>
-        <button className="hero-button">Shop Now</button>
+        <a href="/collections"><button className="hero-button">Shop Now</button></a>
       </div>
       <div className="hero-carousel">
         <Slider {...carouselSettings}>

@@ -28,6 +28,8 @@ Hydrogen is Shopify’s stack for headless commerce. Hydrogen is designed to dov
 npm create @shopify/hydrogen@latest
 ```
 
+URL:
+
 ## Building for production
 
 ```bash

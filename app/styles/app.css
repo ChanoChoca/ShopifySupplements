@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 :root {
-  --aside-width: 450px;
+  --aside-width: 100vw;
   --cart-aside-summary-height-with-discount: 300px;
   --cart-aside-summary-height: 325px;
   --grid-item-width: 355px;
@@ -468,7 +468,7 @@ aside header h2 {
 }
 
 aside main {
-  margin: 1rem;
+  margin: 45px;
 }
 
 aside p {
@@ -527,7 +527,7 @@ aside li {
 }
 /* reveal aside */
 .overlay.expanded aside {
-  transform: translateX(calc(var(--aside-width) * -1));
+  transform: translateX(calc((var(--aside-width) + 35px) * -1));
 }
 
 button.reset {

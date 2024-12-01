@@ -527,7 +527,7 @@ aside li {
 }
 /* reveal aside */
 .overlay.expanded aside {
-  transform: translateX(calc((var(--aside-width) + 35px) * -1));
+  transform: translateX(calc(var(--aside-width) * -1));
 }
 
 button.reset {

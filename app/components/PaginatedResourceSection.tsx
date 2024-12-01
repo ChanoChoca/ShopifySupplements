@@ -22,7 +22,7 @@ export function PaginatedResourceSection<NodesType>({
         );
 
         return (
-            <div className="mx-10 my-16 pb-8 text-center">
+            <div className="my-16 pb-8 text-center">
               {PreviousLink && (
                   <div className="pagination-link">
                     <PreviousLink className="inline-block mb-10 rounded-lg background-blue py-3 px-5">

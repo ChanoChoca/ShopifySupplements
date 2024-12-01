@@ -1054,7 +1054,13 @@ small button {
 .collections-grid {
   display: grid;
   grid-gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(var(--grid-item-width), 1fr));
+  @media (min-width: 758px) {
+    grid-template-columns: 1fr 1fr;
+
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
 }
 
 .collection-item img {
@@ -1066,6 +1072,15 @@ small button {
 * routes/collections.$handle.tsx
 * --------------------------------------------------
 */
+
+#font-responsive {
+  font-size: 25px;
+  margin-top: 112px;
+  @media (min-width: 768px) {
+    font-size: 70px;
+  }
+}
+
 .collection-description {
   margin-bottom: 1rem;
   max-width: 95%;
@@ -1077,8 +1092,14 @@ small button {
 .products-grid {
   display: grid;
   grid-gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(var(--grid-item-width), 1fr));
   margin-bottom: 2rem;
+  @media (min-width: 758px) {
+    grid-template-columns: 1fr 1fr;
+
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
 }
 
 .product-item img {
@@ -1141,8 +1162,19 @@ small button {
 .blog-grid {
   display: grid;
   grid-gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(var(--grid-item-width), 1fr));
+  @media (min-width: 758px) {
+    grid-template-columns: 1fr 1fr;
+
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
   margin-bottom: 2rem;
+}
+
+.blog-grid > div > .blog-grid {
+  margin-left:40px;
+  margin-right: 40px;
 }
 
 .blog-grid > .inline-block {

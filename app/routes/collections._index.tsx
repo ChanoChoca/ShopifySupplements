@@ -46,8 +46,8 @@ export default function Collections() {
   const {collections} = useLoaderData<typeof loader>();
 
   return (
-    <div className="collections pt-16">
-      <h1 className="text-center">Collections</h1>
+    <div className="collections mx-10">
+      <h1 className="text-center" id="font-responsive">Collections</h1>
       <PaginatedResourceSection
         connection={collections}
         resourcesClassName="collections-grid"

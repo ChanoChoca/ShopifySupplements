@@ -1146,8 +1146,8 @@ small button {
 }
 
 .blog-grid > .inline-block {
-  grid-column: 1 / -1; /* Excluye el elemento del flujo del grid */
-  margin: 0 auto; /* Opcional: centra los enlaces */
+  grid-column: 1 / -1;
+  margin: 0 auto;
 }
 
 

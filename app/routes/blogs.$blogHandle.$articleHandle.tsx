@@ -63,20 +63,18 @@ export default function Article() {
   }).format(new Date(article.publishedAt));
 
   return (
-    <div className="mx-10 article pt-28 text-center">
-      <h3 className="text-3xl">
-        {title}
-        <div>
+      <div className="mx-10 article pt-28 text-center">
+        <h3 className="text-3xl mb-5">{title}</h3>
+        <p className="block">
           {publishedDate} &middot; {author?.name}
-        </div>
-      </h3>
+        </p>
 
-      {image && <Image className="rounded-lg mt-5" data={image} sizes="90vw" loading="eager" />}
-      <div
-        dangerouslySetInnerHTML={{__html: contentHtml}}
-        className="article my-16 rounded-lg"
-      />
-    </div>
+        {image && <Image className="rounded-lg mt-5" data={image} sizes="90vw" loading="eager"/>}
+        <div
+            dangerouslySetInnerHTML={{__html: contentHtml}}
+            className="article my-16 rounded-lg"
+        />
+      </div>
   );
 }
 

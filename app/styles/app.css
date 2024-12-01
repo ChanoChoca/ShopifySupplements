@@ -1019,12 +1019,12 @@ small button {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
   }
-}
 
-.rounded-e-none {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  border-right: 0;
+  .rounded-e-none {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: 0;
+  }
 }
 
 @media(min-width: 768px) {

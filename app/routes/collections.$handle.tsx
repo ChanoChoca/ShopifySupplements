@@ -74,7 +74,7 @@ export default function Collection() {
   const {collection} = useLoaderData<typeof loader>();
 
   return (
-    <div className="collection pt-24 mx-10 text-center">
+    <div className="collection pt-28 mx-10 text-center">
       <h3 className="text-3xl">{collection.title}</h3>
       <p className="collection-description">{collection.description}</p>
       <PaginatedResourceSection
@@ -118,7 +118,7 @@ function ProductItem({
       to={variantUrl}
     >
       {product.featuredImage && (
-        <Image
+        <Image className="rounded-lg mt-5"
           alt={product.featuredImage.altText || product.title}
           aspectRatio="1/1"
           data={product.featuredImage}

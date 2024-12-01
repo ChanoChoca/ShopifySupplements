@@ -63,7 +63,7 @@ export default function Article() {
   }).format(new Date(article.publishedAt));
 
   return (
-    <div className="mx-10 article pt-24 text-center">
+    <div className="mx-10 article pt-28 text-center">
       <h3 className="text-3xl">
         {title}
         <div>
@@ -71,10 +71,10 @@ export default function Article() {
         </div>
       </h3>
 
-      {image && <Image data={image} sizes="90vw" loading="eager" />}
+      {image && <Image className="rounded-lg mt-5" data={image} sizes="90vw" loading="eager" />}
       <div
         dangerouslySetInnerHTML={{__html: contentHtml}}
-        className="article my-16"
+        className="article my-16 rounded-lg"
       />
     </div>
   );

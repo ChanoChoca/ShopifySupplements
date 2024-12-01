@@ -22,19 +22,25 @@ export function PaginatedResourceSection<NodesType>({
         );
 
         return (
-          <div className="mx-10 my-16 pb-8 text-center">
-            <PreviousLink className="inline-block mb-10 rounded-lg background-blue py-3 px-5">
-              {isLoading ? 'Loading...' : <span>↑ Load previous</span>}
-            </PreviousLink>
-            {resourcesClassName ? (
-              <div className={resourcesClassName}>{resoucesMarkup}</div>
-            ) : (
-              resoucesMarkup
-            )}
-            <NextLink className="inline-block mt-10 rounded-lg background-blue py-3 px-5">
-              {isLoading ? 'Loading...' : <span>Load more ↓</span>}
-            </NextLink>
-          </div>
+            <div className="mx-10 my-16 pb-8 text-center">
+              {PreviousLink && (
+                  <div className="pagination-link">
+                    <PreviousLink className="inline-block mb-10 rounded-lg background-blue py-3 px-5">
+                      {isLoading ? 'Loading...' : <span>↑ Load previous</span>}
+                    </PreviousLink>
+                  </div>
+              )}
+              <div className={resourcesClassName || 'blog-grid'}>
+                {resoucesMarkup}
+              </div>
+              {NextLink && (
+                  <div className="pagination-link">
+                    <NextLink className="inline-block mt-10 rounded-lg background-blue py-3 px-5">
+                      {isLoading ? 'Loading...' : <span>Load more ↓</span>}
+                    </NextLink>
+                  </div>
+              )}
+            </div>
         );
       }}
     </Pagination>

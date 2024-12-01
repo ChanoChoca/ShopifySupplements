@@ -1138,11 +1138,21 @@ small button {
 * --------------------------------------------------
 */
 
-.blog-grid > div {
+.blog-grid {
   display: grid;
   grid-gap: 1.5rem;
   grid-template-columns: repeat(auto-fit, minmax(var(--grid-item-width), 1fr));
   margin-bottom: 2rem;
+}
+
+.blog-grid > .inline-block {
+  grid-column: 1 / -1; /* Excluye el elemento del flujo del grid */
+  margin: 0 auto; /* Opcional: centra los enlaces */
+}
+
+
+.rounded-lg > video {
+  border-radius: 8px;
 }
 
 .blog-article-image {

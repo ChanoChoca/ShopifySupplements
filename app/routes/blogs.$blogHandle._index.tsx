@@ -101,6 +101,7 @@ function ArticleItem({
         {article.image && (
           <div className="blog-article-image">
             <Image
+                className="rounded-lg"
               alt={article.image.altText || article.title}
               aspectRatio="3/2"
               data={article.image}
@@ -109,7 +110,7 @@ function ArticleItem({
             />
           </div>
         )}
-        <h3>{article.title}</h3>
+        <h3 className="mt-5">{article.title}</h3>
         <small>{publishedAt}</small>
       </Link>
     </div>

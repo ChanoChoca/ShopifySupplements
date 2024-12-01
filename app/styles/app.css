@@ -610,6 +610,11 @@ button.reset:hover:not(:has(> *)) {
 * components/Footer
 * --------------------------------------------------
 */
+
+.background-grey {
+  background: rgba(0, 0, 0, 0.1);
+}
+
 footer {
   background: rgba(0, 0, 0, 0.1);
 }
@@ -1016,6 +1021,12 @@ small button {
   }
 }
 
+.rounded-e-none {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: 0;
+}
+
 @media(min-width: 768px) {
   #email {
     margin: 0;
@@ -1044,7 +1055,6 @@ small button {
   display: grid;
   grid-gap: 1.5rem;
   grid-template-columns: repeat(auto-fit, minmax(var(--grid-item-width), 1fr));
-  margin-bottom: 2rem;
 }
 
 .collection-item img {
@@ -1127,7 +1137,8 @@ small button {
 * routes/blog._index.tsx
 * --------------------------------------------------
 */
-.blog-grid {
+
+.blog-grid > div {
   display: grid;
   grid-gap: 1.5rem;
   grid-template-columns: repeat(auto-fit, minmax(var(--grid-item-width), 1fr));

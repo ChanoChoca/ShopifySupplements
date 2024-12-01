@@ -82,6 +82,7 @@ function SearchAside() {
           {({fetchResults, goToSearch, inputRef}) => (
             <>
               <input
+                  className="rounded-e-none"
                 name="q"
                 onChange={fetchResults}
                 onFocus={fetchResults}
@@ -90,8 +91,8 @@ function SearchAside() {
                 type="search"
                 list={queriesDatalistId}
               />
-              &nbsp;
-              <button onClick={goToSearch}>Search</button>
+              {/*&nbsp;*/}
+              <button className="button-black rounded-l-none roundd text-centr" onClick={goToSearch}>Search</button>
             </>
           )}
         </SearchFormPredictive>

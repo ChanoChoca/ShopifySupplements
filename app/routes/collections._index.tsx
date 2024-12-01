@@ -46,8 +46,8 @@ export default function Collections() {
   const {collections} = useLoaderData<typeof loader>();
 
   return (
-    <div className="collections">
-      <h1>Collections</h1>
+    <div className="collections pt-16">
+      <h1 className="text-center">Collections</h1>
       <PaginatedResourceSection
         connection={collections}
         resourcesClassName="collections-grid"
@@ -73,7 +73,7 @@ function CollectionItem({
 }) {
   return (
     <Link
-      className="collection-item"
+      className="collection-item background-grey"
       key={collection.id}
       to={`/collections/${collection.handle}`}
       prefetch="intent"

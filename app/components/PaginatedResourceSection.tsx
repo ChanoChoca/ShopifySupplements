@@ -22,8 +22,8 @@ export function PaginatedResourceSection<NodesType>({
         );
 
         return (
-          <div>
-            <PreviousLink>
+          <div className="mx-10 my-16 pb-8 text-center">
+            <PreviousLink className="inline-block mb-10 rounded-lg background-blue py-3 px-5">
               {isLoading ? 'Loading...' : <span>↑ Load previous</span>}
             </PreviousLink>
             {resourcesClassName ? (
@@ -31,7 +31,7 @@ export function PaginatedResourceSection<NodesType>({
             ) : (
               resoucesMarkup
             )}
-            <NextLink>
+            <NextLink className="inline-block mt-10 rounded-lg background-blue py-3 px-5">
               {isLoading ? 'Loading...' : <span>Load more ↓</span>}
             </NextLink>
           </div>

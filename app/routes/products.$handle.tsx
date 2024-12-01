@@ -136,7 +136,7 @@ export default function Product() {
   const {title, descriptionHtml} = product;
 
   return (
-    <div className="product text-center md:text-left my-8">
+    <div className="product text-center md:text-left my-8 pt-20">
       <ProductImage image={selectedVariant?.image} />
       <div id="cart-price" className="product-main account py-8 rounded-lg md:rounded-r-none self-center">
         <h1>{title}</h1>

@@ -74,8 +74,8 @@ export default function Collection() {
   const {collection} = useLoaderData<typeof loader>();
 
   return (
-    <div className="collection">
-      <h1>{collection.title}</h1>
+    <div className="collection pt-24 mx-10 text-center">
+      <h3 className="text-3xl">{collection.title}</h3>
       <p className="collection-description">{collection.description}</p>
       <PaginatedResourceSection
         connection={collection.products}

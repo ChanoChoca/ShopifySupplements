@@ -63,18 +63,18 @@ export default function Article() {
   }).format(new Date(article.publishedAt));
 
   return (
-    <div className="article">
-      <h1>
+    <div className="mx-10 article pt-24 text-center">
+      <h3 className="text-3xl">
         {title}
         <div>
           {publishedDate} &middot; {author?.name}
         </div>
-      </h1>
+      </h3>
 
       {image && <Image data={image} sizes="90vw" loading="eager" />}
       <div
         dangerouslySetInnerHTML={{__html: contentHtml}}
-        className="article"
+        className="article my-16"
       />
     </div>
   );

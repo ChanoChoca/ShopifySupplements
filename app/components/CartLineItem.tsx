@@ -6,6 +6,7 @@ import {Link} from '@remix-run/react';
 import {ProductPrice} from './ProductPrice';
 import {useAside} from './Aside';
 import type {CartApiQueryFragment} from 'storefrontapi.generated';
+import {OkendoStarRating} from "@okendo/shopify-hydrogen";
 
 type CartLine = OptimisticCartLine<CartApiQueryFragment>;
 
@@ -20,10 +21,10 @@ export function CartLineItem({
     layout: CartLayout;
     line: CartLine;
 }) {
-    const {id, merchandise} = line;
-    const {product, title, image, selectedOptions} = merchandise;
+    const { id, merchandise } = line;
+    const { product, title, image, selectedOptions } = merchandise;
     const lineItemUrl = useVariantUrl(product.handle, selectedOptions);
-    const {close} = useAside();
+    const { close } = useAside();
 
     return (
         <li key={id} className="cart-line text-center">
@@ -47,10 +48,13 @@ export function CartLineItem({
                     )}
                     <h3>{product.title}</h3>
                 </Link>
-                {/* Encapsula CartLineQuantity dentro de ProductPrice */}
-                <ProductPrice price={line?.cost?.totalAmount}>
-                    <CartLineQuantity line={line} />
-                </ProductPrice>
+
+                <div className="flex flex-col sm:flex-row justify-center items-center gap-3">
+                    <ProductPrice price={line?.cost?.totalAmount}>
+                        <CartLineQuantity line={line} />
+                    </ProductPrice>
+                    <OkendoStarRating productId={product.id}/>
+                </div>
             </div>
         </li>
     );

@@ -690,7 +690,7 @@ function BundlesCollection({
                   />
                   <h4>{product.title}</h4>
                 </Link>
-                <small className="block flex justify-center">
+                <small className="block flex justify-center sm:gap-3">
                   <OkendoStarRating
                       productId={product.id}
                       okendoStarRatingSnippet={product.okendoStarRatingSnippet}
@@ -795,7 +795,7 @@ function RecommendedProducts({
                                 />
                                 <h4>{product.title}</h4>
                               </Link>
-                              <small className="block flex justify-center">
+                              <small className="block flex justify-center sm:gap-3">
                                 <OkendoStarRating
                                     productId={product.id}
                                     okendoStarRatingSnippet={product.okendoStarRatingSnippet}

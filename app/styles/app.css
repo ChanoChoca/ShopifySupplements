@@ -20,8 +20,8 @@
   outline: none;
 }
 
-.account, .account > p > span {
-  background: #E4E4E4;
+.account, .account > p > span, .account .oke-sr-count-number, .account .oke-sr-label-text {
+  background: #E4E4E4 !important;
 }
 
 .account {
@@ -219,6 +219,10 @@ button.slick-arrow.slick-prev::before {
   color: #1B1F23;
   cursor: pointer;
   transition: background-color 0.3s ease;
+}
+
+.oke-w-ratingAverageModule-count, .oke-w-recommendsModule-text, .oke-w-recommendsModule-value {
+  color: #1B1F23 !important;
 }
 
 .background-blue {
@@ -468,7 +472,7 @@ aside header h2 {
 }
 
 aside main {
-  margin: 45px;
+  margin: 10px 45px 10px 45px;
 }
 
 aside p {
@@ -840,10 +844,6 @@ small button {
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
   margin-bottom: 15px;
-
-  @media (min-width: 768px) {
-    margin: 0 0 15px 15px;
-  }
 }
 
 .recommended-products button div, small button div {

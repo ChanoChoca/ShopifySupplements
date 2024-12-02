@@ -12,6 +12,7 @@ import {getVariantUrl} from '~/lib/variants';
 import {ProductPrice} from '~/components/ProductPrice';
 import {ProductImage} from '~/components/ProductImage';
 import {ProductForm} from '~/components/ProductForm';
+import {OkendoStarRating} from "@okendo/shopify-hydrogen";
 
 export const meta: MetaFunction<typeof loader> = ({data}) => {
   return [{title: `Hydrogen | ${data?.product.title ?? ''}`}];
@@ -140,6 +141,7 @@ export default function Product() {
       <ProductImage image={selectedVariant?.image} />
       <div id="cart-price" className="product-main account py-8 rounded-lg md:rounded-r-none self-center">
         <h1>{title}</h1>
+        <OkendoStarRating productId={product.id}/>
         <ProductPrice
           price={selectedVariant?.price}
           compareAtPrice={selectedVariant?.compareAtPrice}

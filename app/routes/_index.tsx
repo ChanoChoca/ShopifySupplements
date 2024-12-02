@@ -15,7 +15,7 @@ import {Image, Money} from '@shopify/hydrogen';
 import type {RecommendedProductsQuery} from 'storefrontapi.generated';
 import {AddToCartButton} from '~/components/AddToCartButton';
 import {useAside} from '~/components/Aside';
-import {OkendoReviews} from '@okendo/shopify-hydrogen';
+import {OkendoReviews, OkendoStarRating} from '@okendo/shopify-hydrogen';
 
 export const meta: MetaFunction = () => {
   return [{title: 'Hydrogen | Home'}];
@@ -656,8 +656,8 @@ function ImagesCollection({}: {}) {
 }
 
 function BundlesCollection({
-  products,
-}: {
+                             products,
+                           }: {
   products: {
     id: string;
     title: string;
@@ -665,6 +665,7 @@ function BundlesCollection({
     priceRange: any;
     images: any[];
     variants: {nodes: {id: string; availableForSale: boolean}[]};
+    okendoStarRatingSnippet: { value: string }; // Agrega esta propiedad
   }[];
 }) {
   const {open} = useAside();
@@ -672,184 +673,203 @@ function BundlesCollection({
   if (!products || products.length === 0) return null;
 
   return (
-    <div className="mx-10 my-16 text-center md:text-left">
-      <p>📦 Goals Specific</p>
-      <h2>Bundles</h2>
-      <div className="bundles-grid">
-        {products.map((product) => (
-          <div key={product.id} className="bundle-product rounded-lg">
-            <Link
-              className="bundle-product-link"
-              to={`/products/${product.handle}`}
-            >
-              <Image
-                data={product.images.nodes[0]}
-                aspectRatio="1/1"
-                sizes="(min-width: 45em) 20vw, 50vw"
-              />
-              <h4>{product.title}</h4>
-            </Link>
-            <small>
-              <AddToCartButton
-                lines={[
-                  {
-                    merchandiseId: product.variants.nodes[0]?.id || '',
-                    quantity: 1,
-                  },
-                ]}
-                disabled={!product.variants.nodes[0]?.availableForSale}
-                onClick={() => open('cart')}
-              >
-                Add • <Money data={product.priceRange.minVariantPrice} />
-              </AddToCartButton>
-            </small>
-          </div>
-        ))}
+      <div className="mx-10 my-16 text-center md:text-left">
+        <p>📦 Goals Specific</p>
+        <h2>Bundles</h2>
+        <div className="bundles-grid">
+          {products.map((product) => (
+              <div key={product.id} className="bundle-product rounded-lg">
+                <Link
+                    className="bundle-product-link"
+                    to={`/products/${product.handle}`}
+                >
+                  <Image
+                      data={product.images.nodes[0]}
+                      aspectRatio="1/1"
+                      sizes="(min-width: 45em) 20vw, 50vw"
+                  />
+                  <h4>{product.title}</h4>
+                </Link>
+                <small className="block flex justify-center">
+                  <OkendoStarRating
+                      productId={product.id}
+                      okendoStarRatingSnippet={product.okendoStarRatingSnippet}
+                  />
+                  <AddToCartButton
+                      lines={[
+                        {
+                          merchandiseId: product.variants.nodes[0]?.id || '',
+                          quantity: 1,
+                        },
+                      ]}
+                      disabled={!product.variants.nodes[0]?.availableForSale}
+                      onClick={() => open('cart')}
+                  >
+                    Add • <Money data={product.priceRange.minVariantPrice} />
+                  </AddToCartButton>
+                </small>
+              </div>
+          ))}
+        </div>
       </div>
-    </div>
   );
 }
 
 const BUNDLES_COLLECTION_QUERY = `#graphql
 fragment ProductBundle on Product {
-    id
-    title
-    handle
-    priceRange {
-        minVariantPrice {
-            amount
-            currencyCode
-        }
+  id
+  title
+  handle
+  priceRange {
+    minVariantPrice {
+      amount
+      currencyCode
     }
-    images(first: 1) {
-        nodes {
-            id
-            url
-            altText
-            width
-            height
-        }
+  }
+  images(first: 1) {
+    nodes {
+      id
+      url
+      altText
+      width
+      height
     }
-    variants(first: 1) {
-        nodes {
-            id
-            availableForSale
-        }
+  }
+  variants(first: 1) {
+    nodes {
+      id
+      availableForSale
     }
+  }
+  okendoStarRatingSnippet: metafield(
+    namespace: "$app:reviews"
+    key: "star_rating_snippet"
+  ) {
+    value
+  }
 }
 query BundlesCollection($country: CountryCode, $language: LanguageCode) @inContext(country: $country, language: $language) {
-    collection(handle: "Sleep") {
-        id
-        title
-        products(first: 4) {
-            nodes {
-                ...ProductBundle
-            }
-        }
+  collection(handle: "Sleep") {
+    id
+    title
+    products(first: 4) {
+      nodes {
+        ...ProductBundle
+      }
     }
+  }
 }
 ` as const;
 
 function RecommendedProducts({
-  products,
-}: {
+                               products,
+                             }: {
   products: Promise<RecommendedProductsQuery | null>;
 }) {
-  const {open} = useAside();
+  const { open } = useAside();
 
   return (
-    <div className="recommended-products text-center md:text-left">
-      <div className="mx-10 py-16" id="supplements">
-        <h6 className="text-center mb-8">🌟 Trending</h6>
-        <h2>Supplements</h2>
-        <a href="/collections">View All</a>
-        <Suspense fallback={<div>Loading...</div>}>
-          <Await resolve={products}>
-            {(response) => (
-              // <div className="recommended-products-grid">
-              <Slider {...trendingProductsSettings}>
-                {response
-                  ? response.products.nodes.map((product) => (
-                      <div
-                        key={product.id}
-                        className="recommended-product rounded-lg"
-                      >
-                        <Link
-                          className="recommended-product-link"
-                          to={`/products/${product.handle}`}
-                        >
-                          <Image
-                            data={product.images.nodes[0]}
-                            aspectRatio="1/1"
-                            sizes="(min-width: 45em) 20vw, 50vw"
-                          />
-                          <h4>{product.title}</h4>
-                        </Link>
-                        <small>
-                          <AddToCartButton
-                            lines={[
-                              {
-                                merchandiseId:
-                                  product.variants.nodes[0]?.id || '',
-                                quantity: 1,
-                              },
-                            ]}
-                            disabled={
-                              !product.variants.nodes[0]?.availableForSale
-                            }
-                            onClick={() => open('cart')}
-                          >
-                            Add •{' '}
-                            <Money data={product.priceRange.minVariantPrice} />
-                          </AddToCartButton>
-                        </small>
-                      </div>
-                    ))
-                  : null}
-              </Slider>
-            )}
-          </Await>
-        </Suspense>
-        <br />
+      <div className="recommended-products text-center md:text-left">
+        <div className="mx-10 py-16" id="supplements">
+          <h6 className="text-center mb-8">🌟 Trending</h6>
+          <h2>Supplements</h2>
+          <a href="/collections">View All</a>
+          <Suspense fallback={<div>Loading...</div>}>
+            <Await resolve={products}>
+              {(response) => (
+                  <Slider {...trendingProductsSettings}>
+                    {response
+                        ? response.products.nodes.map((product) => (
+                            <div
+                                key={product.id}
+                                className="recommended-product rounded-lg"
+                            >
+                              <Link
+                                  className="recommended-product-link"
+                                  to={`/products/${product.handle}`}
+                              >
+                                <Image
+                                    data={product.images.nodes[0]}
+                                    aspectRatio="1/1"
+                                    sizes="(min-width: 45em) 20vw, 50vw"
+                                />
+                                <h4>{product.title}</h4>
+                              </Link>
+                              <small className="block flex justify-center">
+                                <OkendoStarRating
+                                    productId={product.id}
+                                    okendoStarRatingSnippet={product.okendoStarRatingSnippet}
+                                />
+                                <AddToCartButton
+                                    lines={[
+                                      {
+                                        merchandiseId:
+                                            product.variants.nodes[0]?.id || '',
+                                        quantity: 1,
+                                      },
+                                    ]}
+                                    disabled={
+                                      !product.variants.nodes[0]?.availableForSale
+                                    }
+                                    onClick={() => open('cart')}
+                                >
+                                  Add •{' '}
+                                  <Money data={product.priceRange.minVariantPrice} />
+                                </AddToCartButton>
+                              </small>
+                            </div>
+                        ))
+                        : null}
+                  </Slider>
+              )}
+            </Await>
+          </Suspense>
+          <br />
+        </div>
       </div>
-    </div>
   );
 }
 
 const RECOMMENDED_PRODUCTS_QUERY = `#graphql
 fragment RecommendedProduct on Product {
-    id
-    title
-    handle
-    priceRange {
-        minVariantPrice {
-            amount
-            currencyCode
-        }
+  id
+  title
+  handle
+  priceRange {
+    minVariantPrice {
+      amount
+      currencyCode
     }
-    images(first: 1) {
-        nodes {
-            id
-            url
-            altText
-            width
-            height
-        }
+  }
+  images(first: 1) {
+    nodes {
+      id
+      url
+      altText
+      width
+      height
     }
-    variants(first: 1) {
-        nodes {
-            id
-            availableForSale
-        }
+  }
+  variants(first: 1) {
+    nodes {
+      id
+      availableForSale
     }
+  }
+  okendoStarRatingSnippet: metafield(
+    namespace: "$app:reviews"
+    key: "star_rating_snippet"
+  ) {
+    value
+  }
 }
-query RecommendedProducts ($country: CountryCode, $language: LanguageCode)
+query RecommendedProducts($country: CountryCode, $language: LanguageCode)
 @inContext(country: $country, language: $language) {
-    products(first: 100, sortKey: UPDATED_AT, reverse: true) {
-        nodes {
-            ...RecommendedProduct
-        }
+  products(first: 100, sortKey: UPDATED_AT, reverse: true) {
+    nodes {
+      ...RecommendedProduct
     }
+  }
 }
 ` as const;
 

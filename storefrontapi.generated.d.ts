@@ -310,6 +310,9 @@ export type ProductBundleFragment = Pick<
   variants: {
     nodes: Array<Pick<StorefrontAPI.ProductVariant, 'id' | 'availableForSale'>>;
   };
+  okendoStarRatingSnippet?: StorefrontAPI.Maybe<
+    Pick<StorefrontAPI.Metafield, 'value'>
+  >;
 };
 
 export type BundlesCollectionQueryVariables = StorefrontAPI.Exact<{
@@ -342,6 +345,9 @@ export type BundlesCollectionQuery = {
                 Pick<StorefrontAPI.ProductVariant, 'id' | 'availableForSale'>
               >;
             };
+            okendoStarRatingSnippet?: StorefrontAPI.Maybe<
+              Pick<StorefrontAPI.Metafield, 'value'>
+            >;
           }
         >;
       };
@@ -364,6 +370,9 @@ export type RecommendedProductFragment = Pick<
   variants: {
     nodes: Array<Pick<StorefrontAPI.ProductVariant, 'id' | 'availableForSale'>>;
   };
+  okendoStarRatingSnippet?: StorefrontAPI.Maybe<
+    Pick<StorefrontAPI.Metafield, 'value'>
+  >;
 };
 
 export type RecommendedProductsQueryVariables = StorefrontAPI.Exact<{
@@ -394,6 +403,9 @@ export type RecommendedProductsQuery = {
             Pick<StorefrontAPI.ProductVariant, 'id' | 'availableForSale'>
           >;
         };
+        okendoStarRatingSnippet?: StorefrontAPI.Maybe<
+          Pick<StorefrontAPI.Metafield, 'value'>
+        >;
       }
     >;
   };
@@ -1223,11 +1235,11 @@ interface GeneratedQueryTypes {
     return: StoreRobotsQuery;
     variables: StoreRobotsQueryVariables;
   };
-  '#graphql\nfragment ProductBundle on Product {\n    id\n    title\n    handle\n    priceRange {\n        minVariantPrice {\n            amount\n            currencyCode\n        }\n    }\n    images(first: 1) {\n        nodes {\n            id\n            url\n            altText\n            width\n            height\n        }\n    }\n    variants(first: 1) {\n        nodes {\n            id\n            availableForSale\n        }\n    }\n}\nquery BundlesCollection($country: CountryCode, $language: LanguageCode) @inContext(country: $country, language: $language) {\n    collection(handle: "Sleep") {\n        id\n        title\n        products(first: 4) {\n            nodes {\n                ...ProductBundle\n            }\n        }\n    }\n}\n': {
+  '#graphql\nfragment ProductBundle on Product {\n  id\n  title\n  handle\n  priceRange {\n    minVariantPrice {\n      amount\n      currencyCode\n    }\n  }\n  images(first: 1) {\n    nodes {\n      id\n      url\n      altText\n      width\n      height\n    }\n  }\n  variants(first: 1) {\n    nodes {\n      id\n      availableForSale\n    }\n  }\n  okendoStarRatingSnippet: metafield(\n    namespace: "$app:reviews"\n    key: "star_rating_snippet"\n  ) {\n    value\n  }\n}\nquery BundlesCollection($country: CountryCode, $language: LanguageCode) @inContext(country: $country, language: $language) {\n  collection(handle: "Sleep") {\n    id\n    title\n    products(first: 4) {\n      nodes {\n        ...ProductBundle\n      }\n    }\n  }\n}\n': {
     return: BundlesCollectionQuery;
     variables: BundlesCollectionQueryVariables;
   };
-  '#graphql\nfragment RecommendedProduct on Product {\n    id\n    title\n    handle\n    priceRange {\n        minVariantPrice {\n            amount\n            currencyCode\n        }\n    }\n    images(first: 1) {\n        nodes {\n            id\n            url\n            altText\n            width\n            height\n        }\n    }\n    variants(first: 1) {\n        nodes {\n            id\n            availableForSale\n        }\n    }\n}\nquery RecommendedProducts ($country: CountryCode, $language: LanguageCode)\n@inContext(country: $country, language: $language) {\n    products(first: 100, sortKey: UPDATED_AT, reverse: true) {\n        nodes {\n            ...RecommendedProduct\n        }\n    }\n}\n': {
+  '#graphql\nfragment RecommendedProduct on Product {\n  id\n  title\n  handle\n  priceRange {\n    minVariantPrice {\n      amount\n      currencyCode\n    }\n  }\n  images(first: 1) {\n    nodes {\n      id\n      url\n      altText\n      width\n      height\n    }\n  }\n  variants(first: 1) {\n    nodes {\n      id\n      availableForSale\n    }\n  }\n  okendoStarRatingSnippet: metafield(\n    namespace: "$app:reviews"\n    key: "star_rating_snippet"\n  ) {\n    value\n  }\n}\nquery RecommendedProducts($country: CountryCode, $language: LanguageCode)\n@inContext(country: $country, language: $language) {\n  products(first: 100, sortKey: UPDATED_AT, reverse: true) {\n    nodes {\n      ...RecommendedProduct\n    }\n  }\n}\n': {
     return: RecommendedProductsQuery;
     variables: RecommendedProductsQueryVariables;
   };

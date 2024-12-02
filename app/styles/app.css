@@ -885,8 +885,14 @@ small button {
   display: grid;
   grid-gap: 1.5rem;
   grid-template-columns: repeat(1, 1fr);
-  @media (min-width: 45em) {
-    grid-template-columns: repeat(4, 1fr);
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(3, 1fr);
+      @media (min-width: 1280px) {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
   }
 }
 
@@ -1162,19 +1168,21 @@ small button {
 .blog-grid {
   display: grid;
   grid-gap: 1.5rem;
-  @media (min-width: 758px) {
-    grid-template-columns: 1fr 1fr;
-
-    @media (min-width: 1024px) {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
   margin-bottom: 2rem;
 }
 
 .blog-grid > div > .blog-grid {
   margin-left:40px;
   margin-right: 40px;
+  @media (min-width: 758px) {
+    grid-template-columns: 1fr 1fr;
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(3, 1fr);
+      @media (min-width: 1280px) {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+  }
 }
 
 .blog-grid > .inline-block {

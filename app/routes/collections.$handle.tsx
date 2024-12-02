@@ -9,6 +9,7 @@ import {
 import type {ProductItemFragment} from 'storefrontapi.generated';
 import {useVariantUrl} from '~/lib/variants';
 import {PaginatedResourceSection} from '~/components/PaginatedResourceSection';
+import {OkendoStarRating} from "@okendo/shopify-hydrogen";
 
 export const meta: MetaFunction<typeof loader> = ({data}) => {
   return [{title: `Hydrogen | ${data?.collection.title ?? ''} Collection`}];
@@ -102,35 +103,39 @@ export default function Collection() {
 }
 
 function ProductItem({
-  product,
-  loading,
-}: {
+                       product,
+                       loading,
+                     }: {
   product: ProductItemFragment;
   loading?: 'eager' | 'lazy';
 }) {
   const variant = product.variants.nodes[0];
   const variantUrl = useVariantUrl(product.handle, variant.selectedOptions);
+
   return (
-    <Link
-      className="product-item"
-      key={product.id}
-      prefetch="intent"
-      to={variantUrl}
-    >
-      {product.featuredImage && (
-        <Image className="rounded-lg mt-5"
-          alt={product.featuredImage.altText || product.title}
-          aspectRatio="1/1"
-          data={product.featuredImage}
-          loading={loading}
-          sizes="(min-width: 45em) 400px, 100vw"
-        />
-      )}
-      <h4>{product.title}</h4>
-      <small>
-        <Money data={product.priceRange.minVariantPrice} />
-      </small>
-    </Link>
+      <Link
+          className="product-item"
+          key={product.id}
+          prefetch="intent"
+          to={variantUrl}
+      >
+        {product.featuredImage && (
+            <Image
+                className="rounded-lg mt-5"
+                alt={product.featuredImage.altText || product.title}
+                aspectRatio="1/1"
+                data={product.featuredImage}
+                loading={loading}
+                sizes="(min-width: 45em) 400px, 100vw"
+            />
+        )}
+        <h4>{product.title}</h4>
+
+        <small className="block flex justify-center md:gap-3">
+          <OkendoStarRating productId={product.id} />
+          <Money data={product.priceRange.minVariantPrice} />
+        </small>
+      </Link>
   );
 }
 
